@@ -1,0 +1,41 @@
+
+# Ignorar diretórios de dependências
+node_modules/
+virtualenv/
+venv/
+
+# Ignorar arquivos de cache e temporários
+__pycache__/
+*.pyc
+*.log
+.DS_Store
+
+# Ignorar arquivos de banco de dados
+*.db
+*.sqlite
+*.sqlite3
+
+# Ignorar arquivos de configuração sensíveis (se houver)
+*.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignorar arquivos de dados gerados ou temporários
+stays_cleaned.csv
+
+# Ignorar arquivos de imagem que não são parte do código-fonte
+*.jpg
+*.png
+*.gif
+*.svg
+*.bmp
+
+# Ignorar logs do npm
+npm-debug.log*
+.yarn-integrity
+.yarn-audit-cache
+
+# Ignorar arquivos de build do React
+build/

@@ -1,0 +1,189 @@
+body {
+    background-color: #f0f2f5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+.app-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    flex-shrink: 0; /* Evita que a sidebar encolha */
+    transition: transform 0.3s ease-in-out; /* Transição para o menu hambúrguer */
+}
+
+.sidebar .nav-link {
+    color: #555;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    color: #0d6efd;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.kpi-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    color: #fff;
+    height: 180px; /* Altura fixa para padronizar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.kpi-card h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.kpi-card .value {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.kpi-card .description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.secondary-value {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.bg-blue {
+    background-color: #0d6efd;
+}
+
+.bg-green {
+    background-color: #198754;
+}
+
+.bg-red {
+    background-color: #dc3545;
+}
+
+.bg-purple {
+    background-color: #6f42c1;
+}
+
+.bg-orange {
+    background-color: #fd7e14;
+}
+
+.bg-teal {
+    background-color: #20c997;
+}
+
+.date-filter-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.footer {
+    margin-top: auto; 
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 1rem 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        transform: translateX(-100%);
+        z-index: 1050;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1040;
+    }
+
+    .hamburger-menu-button {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 1060;
+        background-color: #0d6efd;
+        color: #fff;
+        border: none;
+        padding: 10px 15px;
+        font-size: 1.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .main-content {
+        padding: 15px;
+        margin-top: 60px; /* Espaço para o botão hambúrguer */
+    }
+
+    .kpi-card {
+        height: auto; /* Remove altura fixa em telas menores */
+    }
+
+    .date-filter-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .date-filter-container .form-control, .form-select {
+        width: 100%;
+    }
+
+    .d-flex.align-items-center {
+        flex-direction: column;
+        align-items: stretch !important;
+    }
+
+    .form-group.me-3 {
+        margin-right: 0 !important;
+        margin-bottom: 10px; /* Espaçamento entre os filtros */
+    }
+}
